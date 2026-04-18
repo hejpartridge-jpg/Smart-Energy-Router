@@ -438,8 +438,10 @@ def plot_device_comparison(results, mode="Normal"):
 # STEP 1 — DEVICE SETUP
 # ================================================================
 st.header("Step 1 — Enter Your Devices")
-st.markdown("Enter each device or building type you want to include, one per line.") 
-st.markdown("The program will tell you how much energy should be directed to these devices to minimise emissions")
+st.markdown("""
+Enter each device or building type you want to include, one per line.<br>
+The program will tell you how much energy should be directed to these devices to minimise emissions.
+""", unsafe_allow_html=True)
  
 device_names_input = st.text_area(
     "Devices / building types:",
@@ -454,8 +456,9 @@ device_data = []
 if device_names:
     for device in device_names:
         st.subheader(f"⚙️ {device}")
-        st.markdown("Energy demand is the average amount of energy you use for that device at each time period")
-        st.markdown("MER is the minimum possible energy you need for that device if you had to solely rely on your solar panels")
+        st.markdown("""
+        Energy demand is the average amount of energy you use for that device at each time period. <br>
+        MER is the minimum possible energy you need for that device if you had to solely rely on your solar panels""", unsafe_allow_html=True)
  
         col1, col2, col3 = st.columns(3)
  
@@ -541,8 +544,9 @@ with col2:
 # STEP 3 — LOCATION
 # ================================================================
 st.header("Step 3 — Your Location")
-st.markdown("Find your coordinates at [maps.google.com](https://maps.google.com) by right clicking your location.")
-st.markdown("This is to enable the most accurate results for you")
+st.markdown("""
+Find your coordinates at [maps.google.com](https://maps.google.com) by right clicking your location. <br>
+This is to enable the most accurate results for you""", unsafe_allow_html=True)
  
 col1, col2 = st.columns(2)
 with col1:
