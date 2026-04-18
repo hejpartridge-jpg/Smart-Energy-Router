@@ -438,7 +438,8 @@ def plot_device_comparison(results, mode="Normal"):
 # STEP 1 — DEVICE SETUP
 # ================================================================
 st.header("Step 1 — Enter Your Devices")
-st.markdown("Enter each device or building type you want to include, one per line. /n The program will tell you how much energy should be directed to these devices to minimise emissions")
+st.markdown("Enter each device or building type you want to include, one per line. <br>  
+The program will tell you how much energy should be directed to these devices to minimise emissions")
  
 device_names_input = st.text_area(
     "Devices / building types:",
