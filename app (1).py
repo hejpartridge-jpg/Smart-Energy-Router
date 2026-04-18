@@ -439,10 +439,11 @@ def plot_device_comparison(results, mode="Normal"):
 # ================================================================
 st.header("Step 1 — Enter Your Devices")
 st.markdown("Enter each device or building type you want to include, one per line.")
+st.markdown("The program will tell you how much energy should be directed to these devices to minimise emissions")
  
 device_names_input = st.text_area(
     "Devices / building types:",
-    placeholder="House\nHospital\nWarehouse\nSchool",
+    placeholder="Phone Charger\nOven\nHeating\nLights",
     height=150
 )
  
@@ -453,6 +454,8 @@ device_data = []
 if device_names:
     for device in device_names:
         st.subheader(f"⚙️ {device}")
+        st.markdown("Energy demand is the average amount of energy you use for that device at each time period")
+        st.markdown("MER is the minimum possible energy you need for that device if you had to solely rely on your solar panels")
  
         col1, col2, col3 = st.columns(3)
  
@@ -539,6 +542,7 @@ with col2:
 # ================================================================
 st.header("Step 3 — Your Location")
 st.markdown("Find your coordinates at [maps.google.com](https://maps.google.com) by right clicking your location.")
+st.markdown("This is to enable the most accurate results for you")
  
 col1, col2 = st.columns(2)
 with col1:
